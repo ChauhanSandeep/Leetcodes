@@ -23,8 +23,9 @@ Note that it is the  `kth`  largest element in the sorted order, not the  `kth` 
 -   `1 <= k <= nums.length <= 104`
 -   `-104  <= nums[i] <= 104`
 
-### Solution
+### Solution:
 #### Using sorting
+**Algorithm**
 - Sort `nums` array.
 - Element present at index `nums.length - k` would be `kth` largest.
 
