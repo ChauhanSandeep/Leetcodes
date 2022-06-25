@@ -1,4 +1,4 @@
-## 1354. Construct Target Array With Multiple Sums (25/06/2022)
+## 1354. Construct Target Array With Multiple Sums (24/06/2022)
 
 ## Problem:
 
