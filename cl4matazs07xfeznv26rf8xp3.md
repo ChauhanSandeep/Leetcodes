@@ -1,6 +1,6 @@
 ## 820. Short Encoding of Words (20/06/2022)
 
-### Problem:
+## Problem:
 A **valid encoding** of an array of `words` is any reference string `s` and array of indices `indices` such that:
 
 -   `words.length == indices.length`
@@ -9,33 +9,26 @@ A **valid encoding** of an array of `words` is any reference string `s` an
 
 Given an array of `words`, return _the **length of the shortest reference string**_ `s` _possible of any **valid encoding** of_ `words`_._
 
-**Example 1:**
-
-**Input:** words = ["time", "me", "bell"]
-
-**Output:** 10
-
+**Example 1:** <br>
+**Input:** words = ["time", "me", "bell"] <br>
+**Output:** 10 <br>
 **Explanation:** A valid encoding would be s = `"time#bell#" and indices = [0, 2, 5`].
 words[0] = "time", the substring of s starting from indices[0] = 0 to the next '#' is underlined in "time#bell#"
 words[1] = "me", the substring of s starting from indices[1] = 2 to the next '#' is underlined in "time#bell#"
 words[2] = "bell", the substring of s starting from indices[2] = 5 to the next '#' is underlined in "time#bell#"
 
-**Example 2:**
-
-**Input:** words = ["t"]
-
-**Output:** 2
-
+**Example 2:** <br>
+**Input:** words = ["t"] <br>
+**Output:** 2 <br>
 **Explanation:** A valid encoding would be s = "t#" and indices = [0].
 
-**Constraints:**
-
+**Constraints:** <br>
 -   `1 <= words.length <= 2000`
 -   `1 <= words[i].length <= 7`
 -   `words[i]` consists of only lowercase letters.
 
-### Solution:
-#### Using Set
+## Solution:
+### Using Set
 **Algorithm**
 > Words which are suffix of another word in the array can be ignored as they will be covered as part of bigger word
 
@@ -70,7 +63,7 @@ class Solution {
 }
 ```
 
-#### Using Trie
+### Using Trie
 **Algorithm**
 - Insert each word into trie in reverse order so that suffixes are ignored.
 - Traverse through each word in trie and add `length + 1` to find total length of encoded string.
