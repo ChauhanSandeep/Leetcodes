@@ -1,6 +1,6 @@
 ## 1642. Furthest Building You Can Reach (21/06/2022)
 
-### Problem:
+## Problem:
 
 You are given an integer array  `heights`  representing the heights of buildings, some  `bricks`, and some  `ladders`.
 
@@ -13,12 +13,9 @@ While moving from building  `i`  to building  `i+1`  (**0-indexed**),
 
 _Return the furthest building index (0-indexed) you can reach if you use the given ladders and bricks optimally._
 
-**Example 1:**
-
-**Input:** heights = [4,2,7,6,9,14,12], bricks = 5, ladders = 1
-
-**Output:** 4
-
+**Example 1:** <br>
+**Input:** heights = [4,2,7,6,9,14,12], bricks = 5, ladders = 1 <br>
+**Output:** 4 <br>
 **Explanation:** Starting at building 0, you can follow these steps:
 - Go to building 1 without using ladders nor bricks since 4 >= 2.
 - Go to building 2 using 5 bricks. You must use either bricks or ladders because 2 < 7.
@@ -26,28 +23,23 @@ _Return the furthest building index (0-indexed) you can reach if you use the giv
 - Go to building 4 using your only ladder. You must use either bricks or ladders because 6 < 9.
 It is impossible to go beyond building 4 because you do not have any more bricks or ladders.
 
-**Example 2:**
-
-**Input:** heights = [4,12,2,7,3,18,20,3,19], bricks = 10, ladders = 2
-
+**Example 2:** <br>
+**Input:** heights = [4,12,2,7,3,18,20,3,19], bricks = 10, ladders = 2 <br>
 **Output:** 7
 
-**Example 3:**
-
-**Input:** heights = [14,3,19,3], bricks = 17, ladders = 0
-
+**Example 3:** <br>
+**Input:** heights = [14,3,19,3], bricks = 17, ladders = 0 <br>
 **Output:** 3
 
-**Constraints:**
-
+**Constraints:** <br>
 -   `1 <= heights.length <= 105`
 -   `1 <= heights[i] <= 106`
 -   `0 <= bricks <= 109`
 -   `0 <= ladders <= heights.length`
 
-### Solution:
+## Solution:
 
-#### Using Dynamic Programming (Time limit and memory limit exceeded)
+### Using Dynamic Programming (Time limit and memory limit exceeded)
 **Algorithm**
 - If the next building is smaller or equal to the current building then we can simply jump to next building without using bricks or a ladder.
 - If the next building is bigger than the current building then we can use either bricks (equivalent to the difference between buildings) or one ladder.
@@ -88,7 +80,7 @@ class Solution {
 The above approach failed because of the constraints. We are exceeding the number of states we can store and the time it takes to calculate maxReachable for each state.
 When DP approach fails, then we can try with the greedy algorithm.
 
-#### Using Greedy Approach
+### Using Greedy Approach
 **Algorithm:**
 
 > Always try to utilize bricks first. When bricks are finished, then we get the max jump taken till now. Try to use one ladder in that jump instead of bricks. 
